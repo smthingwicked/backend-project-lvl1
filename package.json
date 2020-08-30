@@ -19,7 +19,9 @@
     "url": "https://github.com/smthingwicked/backend-project-lvl1/issues"
   },
   "homepage": "https://github.com/smthingwicked/backend-project-lvl1#readme",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
   "devDependencies": {},
   "description": ""
 }
