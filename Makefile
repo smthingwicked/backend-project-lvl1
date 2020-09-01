@@ -1,8 +1,8 @@
-make install:
-	nmp install
-make start:
+install:
+	npm install
+start:
 	node bin/brain-games.js
-make publish:
+publish:
 	npm publish --dry-run
 make lint:
 	npx eslint .
