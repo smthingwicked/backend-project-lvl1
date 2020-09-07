@@ -25,6 +25,7 @@
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
+    "lodash": "^4.17.20",
     "readline-sync": "^1.4.10",
     "typescript": "^4.0.2"
   },
