@@ -9,5 +9,8 @@
 * brain-even:
 [![asciicast](https://asciinema.org/a/OiDIqntGZvZjMWnGc99pDnNYJ.svg)](https://asciinema.org/a/OiDIqntGZvZjMWnGc99pDnNYJ)
 
-* brain-calc*
+* brain-calc:
 [![asciicast](https://asciinema.org/a/4N5wmtd3bNKtxwM74krVvhyXE.svg)](https://asciinema.org/a/4N5wmtd3bNKtxwM74krVvhyXE)
+
+* brain-gcd:
+[![asciicast](https://asciinema.org/a/OQVeC4G8I2ctxdo8NjaoF2DNn.svg)](https://asciinema.org/a/OQVeC4G8I2ctxdo8NjaoF2DNn)
