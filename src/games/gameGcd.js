@@ -1,17 +1,17 @@
 import random from 'lodash/random.js';
-import brainGame from '../index.js';
+import runBrainGame from '../index.js';
 
-const evenRule = 'Find the greatest common divisor of given numbers.';
+const rule = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (operand1, operand2) => {
-  if (operand2 > 0) {
-    const n = operand1 % operand2;
-    return findGcd(operand2, n);
+const findGcd = (num1, num2) => {
+  if (num2 > 0) {
+    const n = num1 % num2;
+    return findGcd(num2, n);
   }
-  return Math.abs(operand1);
+  return Math.abs(num1);
 };
 
-const pairQuestionAnswer = () => {
+const genQuestionAnswer = () => {
   const operand1 = random(1, 10);
   const operand2 = random(1, 10);
 
@@ -22,5 +22,5 @@ const pairQuestionAnswer = () => {
 };
 
 export default () => {
-  brainGame(pairQuestionAnswer, evenRule);
+  runBrainGame(genQuestionAnswer, rule);
 };

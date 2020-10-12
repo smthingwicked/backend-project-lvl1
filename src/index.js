@@ -1,16 +1,21 @@
 import readlineSync from 'readline-sync';
 
-import cheerUser from './cli.js';
+const cheerUser = () => {
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
+  return userName;
+};
 
-const raundCosts = 3;
+const raundsCount = 3;
 
-const brainGame = (pairQuestionAnswer, rule) => {
+const runBrainGame = (genQuestionAnswer, rule) => {
   console.log('Welcome to the Brain Games!');
   const userName = cheerUser();
   console.log(rule);
 
-  for (let i = 0; i < raundCosts; i += 1) {
-    const { question, correctAnswer } = pairQuestionAnswer();
+  for (let i = 0; i < raundsCount; i += 1) {
+    const { question, correctAnswer } = genQuestionAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -26,4 +31,4 @@ const brainGame = (pairQuestionAnswer, rule) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default brainGame;
+export default runBrainGame;

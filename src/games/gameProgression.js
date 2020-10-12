@@ -1,7 +1,7 @@
 import random from 'lodash/random.js';
-import brainGame from '../index.js';
+import runBrainGame from '../index.js';
 
-const evenRule = 'What number is missing in the progression?';
+const rule = 'What number is missing in the progression?';
 
 const makeProgression = (startNum, differenceNum) => {
   const progression = [startNum];
@@ -32,7 +32,7 @@ const findMissing = (progression, differenceNum) => {
   return progression[i - 1] + differenceNum;
 };
 
-const pairQuestionAnswer = () => {
+const genQuestionAnswer = () => {
   const startNum = random(1, 50);
   const differenceNum = random(1, 5);
   const progression = hideNum(makeProgression(startNum, differenceNum));
@@ -44,5 +44,5 @@ const pairQuestionAnswer = () => {
 };
 
 export default () => {
-  brainGame(pairQuestionAnswer, evenRule);
+  runBrainGame(genQuestionAnswer, rule);
 };

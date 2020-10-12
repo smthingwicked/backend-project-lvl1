@@ -1,28 +1,32 @@
 import random from 'lodash/random.js';
-import brainGame from '../index.js';
+import runBrainGame from '../index.js';
 
-const evenRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num === 1) {
-    return 'yes';
+    return true;
   }
 
-  for (let i = 2; i < num; i += 1) {
+  if (num < 0) {
+    return false;
+  }
+
+  for (let i = 2; i < num / 2; i += 1) {
     if (num % i === 0) {
-      return 'no';
+      return false;
     }
   }
-  return 'yes';
+  return true;
 };
 
-const pairQuestionAnswer = () => {
+const genQuestionAnswer = () => {
   const question = random(1, 20);
-  const correctAnswer = isPrime(question).toString();
+  const correctAnswer = isPrime(question) ? 'yes' : 'no'.toString();
 
   return { question, correctAnswer };
 };
 
 export default () => {
-  brainGame(pairQuestionAnswer, evenRule);
+  runBrainGame(genQuestionAnswer, rule);
 };

@@ -1,8 +1,8 @@
 # backend-project-lvl1
 
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/440d64ec7815a4a8f1bd/maintainability)](https://codeclimate.com/github/smthingwicked/backend-project-lvl1/maintainability)
 
-![](https://github.com/smthingwicked/backend-project-lvl1/workflows/backend-project-lvl1/badge.svg)
+![backend-project-lvl1](https://github.com/smthingwicked/backend-project-lvl1/workflows/backend-project-lvl1/badge.svg?branch=master)
 
 
 **Asciinema:**

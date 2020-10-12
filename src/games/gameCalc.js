@@ -1,7 +1,7 @@
 import random from 'lodash/random.js';
-import brainGame from '../index.js';
+import runBrainGame from '../index.js';
 
-const evenRule = 'What is the result of the expression?';
+const rule = 'What is the result of the expression?';
 
 const operations = {
   '+': (x, y) => x + y,
@@ -21,7 +21,7 @@ const makeAnswer = (operand1, operand2, operator) => {
   return expression(operand1, operand2);
 };
 
-const pairQuestionAnswer = () => {
+const genQuestionAnswer = () => {
   const operand1 = random(1, 10);
   const operand2 = random(1, 10);
   const operator = getOperator(random(0, operationsArr.length - 1));
@@ -33,5 +33,5 @@ const pairQuestionAnswer = () => {
 };
 
 export default () => {
-  brainGame(pairQuestionAnswer, evenRule);
+  runBrainGame(genQuestionAnswer, rule);
 };

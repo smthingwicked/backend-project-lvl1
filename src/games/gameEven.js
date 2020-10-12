@@ -1,15 +1,17 @@
 import random from 'lodash/random.js';
-import brainGame from '../index.js';
+import runBrainGame from '../index.js';
 
-const evenRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const pairQuestionAnswer = () => {
+const isEven = (num) => num % 2 === 0;
+
+const genQuestionAnswer = () => {
   const question = random(1, 20);
-  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
 
   return { question, correctAnswer };
 };
 
 export default () => {
-  brainGame(pairQuestionAnswer, evenRule);
+  runBrainGame(genQuestionAnswer, rule);
 };
