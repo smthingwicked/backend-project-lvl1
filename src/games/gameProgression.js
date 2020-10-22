@@ -3,42 +3,30 @@ import runBrainGame from '../index.js';
 
 const rule = 'What number is missing in the progression?';
 
-const makeProgression = (startNum, differenceNum) => {
-  const progression = [startNum];
+const progressionLength = 10;
 
-  for (let i = 1; i <= 10; i += 1) {
-    const nextNumOfProgr = progression[i - 1] + differenceNum;
+const makeProgression = (start, step) => {
+  const progression = [start];
+
+  for (let i = 1; i < progressionLength; i += 1) {
+    const nextNumOfProgr = progression[i - 1] + step;
     progression.push(nextNumOfProgr);
   }
 
   return progression;
 };
 
-const hideNum = (progression) => {
-  const hideIdx = random(0, 9);
-  progression.splice(hideIdx, 1, '..');
-
-  return progression;
-};
-
-const findMissing = (progression, differenceNum) => {
-  let i = 0;
-  while (progression[i] !== '..') {
-    i += 1;
-  }
-  if (i === 0) {
-    return progression[i + 1] - differenceNum;
-  }
-  return progression[i - 1] + differenceNum;
-};
-
 const genQuestionAnswer = () => {
-  const startNum = random(1, 50);
-  const differenceNum = random(1, 5);
-  const progression = hideNum(makeProgression(startNum, differenceNum));
+  const start = random(1, 50);
+  const step = random(1, 5);
+  const hiddenMemberIndex = random(0, progressionLength - 1);
+
+  const progression = makeProgression(start, step);
+  const hiddenMember = progression[hiddenMemberIndex];
+  progression.splice(hiddenMemberIndex, 1, '..');
 
   const question = progression.join(' ');
-  const correctAnswer = findMissing(progression, differenceNum).toString();
+  const correctAnswer = hiddenMember.toString();
 
   return { question, correctAnswer };
 };

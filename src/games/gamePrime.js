@@ -4,11 +4,7 @@ import runBrainGame from '../index.js';
 const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num === 1) {
-    return true;
-  }
-
-  if (num < 0) {
+  if (num <= 1) {
     return false;
   }
 
@@ -22,7 +18,7 @@ const isPrime = (num) => {
 
 const genQuestionAnswer = () => {
   const question = random(1, 20);
-  const correctAnswer = isPrime(question) ? 'yes' : 'no'.toString();
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
 
   return { question, correctAnswer };
 };
