@@ -5,4 +5,4 @@ const greet = () => {
   console.log(`Hello, ${userName}!`);
 };
 
-greet();
+export default greet;
